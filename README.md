@@ -22,7 +22,39 @@ git status
 git add [.|file_name|--all|-A]
 ```
 
-- Antes de realmente fazer o commit dos arquivos, caso seja preciso remover algum arquivo do commit atual, utilize o comando:
+- Antes de realmente fazer o commit dos arquivos e realmente salvar o estado atual do arquivos, caso seja preciso remover algum arquivo do commit atual, utilize o comando:
 ```
 git reset HEAD nome_do_arquivo
 ```
+
+**Obs:.** Outra forma de remover um arquivo da área de trabalho do git é executando o comando:
+```
+git rm --cached nome_do_arquivo
+```
+
+- Utilize o comando seguinte para remover o arquivo do repositório local do git:
+```
+git rm nome_do_arquivo
+```
+
+- Para desfazer todas as alterações nos arquivos, e apontar para o ultimo estado rastreado por commit, utilize:
+```
+git reset --hard HEAD
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
