@@ -15,3 +15,9 @@ git clone https://github.com/PedroFerreiraCJr/git-samples.git
 ```
 git status
 ```
+**Obs:.** Os arquivos vermelhos são os arquivos que foram alterados ou ainda não estão sendo rastreados pelo git.
+
+- Para adicionar os arquivos alterados ou criados no commit, utilize o comando:
+```
+git add [.|file_name|--all|-A]
+```
