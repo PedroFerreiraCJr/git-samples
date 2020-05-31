@@ -58,6 +58,8 @@ git log
 ```
 **Obs:.** Para visualizar somente os últimos 5 commits, por exemplo, utilize o parametro: -n 5.
 
+[Documentação do comando log](https://git-scm.com/docs/git-log)
+
 - Para visualizar os arquivos que foram alterados em determinado commit, utilize o seguinte comando:
 ```
 git show --pretty="" --name-only d542f8a1b1d8c0f409222cf7999dd742e10bc6b1
