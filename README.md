@@ -158,3 +158,32 @@ git branch -d nome_da_branch_local
 git push origin --delete nome_da_branch_remote
 ```
 
+**Obs:.** O repositório remoto, neste caso *origin* pode ser troacado por outro caso necessário.
+
+- Para visualizar todas as modificações na branch atual, utilize o seguinte comando:
+```
+git diff
+```
+
+**Obs:.** Para visualizar todas as modificações na branch atual, quando já houver usado o comando *git add*, use o seguinte comando:
+```
+git diff --cached
+```
+
+- Para visualizar as diferenças entre duas branchs, utilize o seguinte comando:
+```
+git diff nome_da_branch1 nome_da_branch2
+```
+
+[Documentação do comando diff](https://git-scm.com/docs/git-diff)
+
+
+
+
+
+
+
+
+
+
+
