@@ -47,18 +47,21 @@ git rm nome_do_arquivo
 ```
 git reset --hard HEAD
 ```
-- Quando estiver pronto para salvar o estado dos arquivo no diretório de trabalho, utilize o comando a seguir:
+- Quando estiver pronto para salvar o estado dos arquivos no diretório de trabalho, utilize o comando a seguir:
 ```
 git commit -m "Mensagem do commit"
 ```
 
+-- Para visualizar todos os commit efetuados em determinado na branch atual, utilize o seguinte comando:
+```
+git log
+```
+**Obs:.** Para visualizar somente os últimos 5 commits, por exemplo, utilize o parametro: -n 5.
 
-
-
-
-
-
-
+- Para visualizar os arquivos que foram alterados em determinado commit, utilize o seguinte comando:
+```
+git show --pretty="" --name-only d542f8a1b1d8c0f409222cf7999dd742e10bc6b1
+```
 
 
 
