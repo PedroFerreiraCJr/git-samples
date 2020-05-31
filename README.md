@@ -2,4 +2,4 @@
 
 ## criação de repositório
 Criação de repositório local:
-> 'git init'
+'git init'
