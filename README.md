@@ -112,7 +112,7 @@ git remote add origin https://github.com/PedroFerreiraCJr/git-samples.git
 
 - Para visualizar as branchs remotas do repositório local do git, utilize o seguinte comando:
 ```
-git remove -v
+git remote -v
 ```
 
 - Para remover um repositório remoto do repositório local, utilize o seguinte comando:
@@ -122,7 +122,7 @@ git remote rm nome_do_repositório_remoto
 
 - Para obter mais informações sobre o comando *remote* no próprio terminal, utilize o comando:
 ```
-git remove --help
+git remote --help
 ```
 
 [Documentação do comando remote](https://git-scm.com/docs/git-remote)
@@ -152,5 +152,9 @@ git push origin master
 
 [Documentação do comando push](https://git-scm.com/docs/git-push)
 
-
+- Para remover uma branch do repositório remoto, utilize o seguinte comando:
+```
+git branch -d nome_da_branch_local
+git push origin --delete nome_da_branch_remote
+```
 
