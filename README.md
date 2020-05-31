@@ -11,7 +11,7 @@ export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 
 - Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
-```git
+```
 git init
 ```
 
@@ -81,7 +81,7 @@ git show --pretty="" --name-only d542f8a1b1d8c0f409222cf7999dd742e10bc6b1
 git branch nome_da_nova_branch
 ```
 
-- Para listar as branchs existentes, utilize o seguiente comando:
+- Para listar as branchs existentes, utilize o seguinte comando:
 ```
 git branch -a
 ```
@@ -93,10 +93,48 @@ git branch -a
 git checkout nome_da_branch
 ```
 
-**Obs:.** O comando checkout pode ser utilizado para para executar duas ações, que são, criar uma nova branch e imediatamente trocar para o nova branch. A utilizaçãod o comando é o seguinte:
+**Obs:.** O comando checkout pode ser utilizado para para executar duas ações, que são, criar uma nova branch e imediatamente trocar para o nova branch. O comando é o seguinte:
 ```
 git checkout -b nome_da_nova_branch
 ```
+
+- Para deletar uma branch, utilize o seguinte comando:
+```
+git branch -d nome_da_branch
+```
+
+- Para adicionar um repositório remoto ao repositório local do git, utilize o seguinte comando:
+```
+git remote add origin https://github.com/PedroFerreiraCJr/git-samples.git
+```
+
+**Obs:.** É possível adicionar mais de uma branch remota.
+
+- Para visualizar as branchs remotas do repositório local do git, utilize o seguinte comando:
+```
+git remove -v
+```
+
+- Para remover uma branch remota, utilize o seguinte comando:
+```
+git remote rm nome_do_repositório_remoto
+```
+
+- Para obter mais informações sobre o comando *remote* no próprio terminal, utilize o comando:
+```
+git remove --help
+```
+
+[Documentação do comando remote](https://git-scm.com/docs/git-remote)
+
+
+
+
+
+
+
+
+
 
 
 
