@@ -1,11 +1,12 @@
 # git-samples
+  Amostras de comando do git.
 
-## criação de repositório
-- Para fazer criação de um novo repositório local do zero, utilize o comando:
+- Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
 ```
-  git init
+git init
 ```
-- A criação de um repositório local a partir de um repositório já existente, utilize o comando:
+
+- Para fazer a criação de um repositório local a partir de um repositório já existente, utilize o seguinte comando:
 ```
-git clone $URL_REPOSITÓRIO
+git clone https://github.com/PedroFerreiraCJr/git-samples.git
 ```
