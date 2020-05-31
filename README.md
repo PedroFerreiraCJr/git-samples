@@ -32,29 +32,13 @@ git reset HEAD nome_do_arquivo
 git rm --cached nome_do_arquivo
 ```
 
-- Utilize o comando seguinte para remover o arquivo do repositório local do git:
+- Utilize o seguinte comando para remover o arquivo do repositório local do git, e remover do sistema de arquivos:
 ```
 git rm nome_do_arquivo
 ```
+**Obs:.** O arquivo a ser removido já deve estar sendo rastreado pelo git.
 
-- Para desfazer todas as alterações nos arquivos, e apontar para o ultimo estado rastreado por commit, utilize:
+- Para desfazer todas as alterações no diretório de trabalho do git, e apontar para o último estado rastreado por commit, utilize o comando:
 ```
 git reset --hard HEAD
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
