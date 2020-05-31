@@ -127,16 +127,30 @@ git remove --help
 
 [Documentação do comando remote](https://git-scm.com/docs/git-remote)
 
-- Para baixar todas as alterações no repositório remoto para o repositório local, utilize o seguinte comando:
+- Para baixar todas as alterações do repositório remoto para o repositório local, utilize o seguinte comando:
 ```
 git pull origin master
 ```
 
 **Obs:.** O comando acima está apontando para o repositório remoto origin e branch master. Altera os parametros *origin* e *master* para o repositório remoto e branch, respectivamente.
 
+[Documentação do comando pull](https://git-scm.com/docs/git-pull)
 
+- Para criar a branch do repositório local na branch remota, utilize o seguinte comando:
+```
+git push -u origin master
+```
 
+**Obs:.** Utilize o parametro *-u* equivamente à *--set-upstream* somente quando a branch ainda não existir no repositório remoto.
 
+- Para mandar todas as alterações (commits) do repositório local para o repositório remoto, utilize o seguinte comando:
+```
+git push origin master
+```
+
+**Obs:.** É possível trocar os parametros: *origin*, e *master*; para a um repositório remoto e branch remota pré-existente.
+
+[Documentação do comando push](https://git-scm.com/docs/git-push)
 
 
 
