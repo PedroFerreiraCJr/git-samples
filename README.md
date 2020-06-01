@@ -82,7 +82,7 @@ git reset --hard HEAD
 git commit -m "Mensagem do commit"
 ```
 
--- Para visualizar todos os commit efetuados em determinado na branch atual, utilize o seguinte comando:
+- Para visualizar todos os commit efetuados em determinado na branch atual, utilize o seguinte comando:
 ```
 git log
 ```
@@ -197,14 +197,4 @@ git diff nome_da_branch1 nome_da_branch2
 ```
 
 [Documentação do comando diff](https://git-scm.com/docs/git-diff)
-
-
-
-
-
-
-
-
-
-
 
