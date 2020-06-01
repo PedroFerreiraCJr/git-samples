@@ -1,7 +1,23 @@
-# git-samples
-  Amostras de comando do git.
+<h1 align="center">git-samples</h1>
+  Repositório contendo uma referência aos principais comandos do git.
 
-**Obs:.** Os usuários do linux podem utilizar o seguinte script para visualizar a branch atual no terminal. Para isso, altere o arquivo ~/.bashrc adicionando o seguinte shell script.
+<br/>
+<br/>
+<br/>
+
+## Árvores do Git
+
+<p align="center">
+  <img width="460" height="300" src="https://miro.medium.com/max/686/1*diRLm1S5hkVoh5qeArND0Q.png">
+</p>
+
+<br/>
+<br/>
+<br/>
+
+## Variável de ambiente linux
+
+Os usuários do linux podem utilizar o seguinte script para visualizar a branch atual no terminal. Para isso, altere o arquivo ~/.bashrc adicionando o seguinte shell script.
 ```shell
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -9,6 +25,11 @@ parse_git_branch() {
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 ```
 
+<br/>
+<br/>
+<br/>
+
+## Comandos
 
 - Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
 ```
