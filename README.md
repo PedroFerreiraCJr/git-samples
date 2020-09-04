@@ -2,8 +2,6 @@
   Repositório contendo uma referência aos principais comandos do git.
 
 <br/>
-<br/>
-<br/>
 
 ## Árvores do Git
 
@@ -11,8 +9,6 @@
   <img width="460" height="300" src="https://miro.medium.com/max/686/1*diRLm1S5hkVoh5qeArND0Q.png">
 </p>
 
-<br/>
-<br/>
 <br/>
 
 ## Variável de ambiente linux
@@ -25,20 +21,25 @@ parse_git_branch() {
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 ```
 
-<br/>
-<br/>
-<br/>
-
 ## Comandos
 
-- Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
+- Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório local deve ser criado:
 ```
 git init
 ```
+**Obs:.** Para um projeto criado do zero, sem arquivos no diretório do projeto, é possível executar o comando que segue.
+```
+git init nome-projeto
+```
 
-- Para fazer a criação de um repositório local a partir de um repositório já existente, utilize o seguinte comando:
+- Para fazer a criação de um repositório local a partir de um repositório já existente hospedado em um repositório do Github, por exemplo, utilize o seguinte comando:
 ```
 git clone https://github.com/PedroFerreiraCJr/git-samples.git
+```
+
+- O mesmo comando permite clonar um repositório que existe localmente; supondo que mywebsite seja um repositório local do git, para clonar o mesmo para outro repositório local, execute:
+```
+git clone mywebsite/ mywebsite2
 ```
 
 - O comando abaixo mostra o estado atual do diretório de trabalho do git:
