@@ -23,16 +23,16 @@ export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 ## Comandos
 
-- Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório local deve ser criado:
+- Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
 ```
 git init
 ```
-**Obs:.** Para um projeto criado do zero, sem arquivos no diretório do projeto, é possível executar o comando que segue.
+**Obs:.** Para um projeto criado do zero, sem diretório do projeto, é possível executar o comando que segue:
 ```
 git init nome-projeto
 ```
 
-- Para fazer a criação de um repositório local a partir de um repositório já existente hospedado em um repositório do Github, por exemplo, utilize o seguinte comando:
+- Para fazer a criação de um repositório local a partir de um repositório já existente hospedado, por exemplo, em um repositório do Github, utilize o seguinte comando:
 ```
 git clone https://github.com/PedroFerreiraCJr/git-samples.git
 ```
@@ -42,33 +42,33 @@ git clone https://github.com/PedroFerreiraCJr/git-samples.git
 git clone mywebsite/ mywebsite2
 ```
 
-- O comando abaixo mostra o estado atual do diretório de trabalho do git:
+- O comando abaixo mostra o estado atual do diretório de trabalho (working directory) do git:
 ```
 git status
 ```
-**Obs:.** Os arquivos listados na cor vermelhos são os arquivos que foram alterados (modified) ou ainda não estão sendo rastreados (untracked) pelo git.
+**Obs:.** Os arquivos listados na cor vermelha são os arquivos que foram alterados (modified) ou ainda não estão sendo rastreados (untracked) pelo git.
 
 - Para adicionar os arquivos alterados ou criados no commit, utilize o comando:
 ```
 git add [.|file_name|--all|-A]
 ```
 
-- Antes de realmente fazer o commit dos arquivos e salvar o estado atual do diretório de trabalho, caso seja preciso remover algum arquivo do commit atual, utilize o comando:
+- Antes de realmente fazer o commit dos arquivos e salvar o estado atual do diretório de trabalho, caso seja preciso remover qualquer arquivo rastreado pelo git do commit atual (após ter executado o comando git add .), utilize o comando:
 ```
 git reset HEAD nome_do_arquivo
 ```
 
-**Obs:.** Outra forma de remover um arquivo da área de trabalho do git é executando o comando:
+**Obs:.** Outra forma de remover um arquivo da área de trabalho do git, e deixar de fazer o rastreamentod o arquivo, é executando o comando:
 ```
 git rm --cached nome_do_arquivo
 ```
 
-- Para desfazer alterações feitas em um arquivo, utilize o comando:
+- Para desfazer alterações feitas em um arquivo que está no diretório de trabalho (working directory), utilize o comando:
 ```
 git checkout nome_do_arquivo
 ```
 
-- Utilize o seguinte comando para remover o arquivo do repositório local do git, e remover do sistema de arquivos:
+- Utilize o seguinte comando para remover o arquivo do repositório local do git, assim como remover do sistema de arquivos:
 ```
 git rm nome_do_arquivo
 ```
