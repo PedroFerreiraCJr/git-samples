@@ -6,7 +6,7 @@
 ## Árvores do Git
 
 <p align="center">
-  <img width="460" height="300" src="https://miro.medium.com/max/686/1*diRLm1S5hkVoh5qeArND0Q.png">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/PedroFerreiraCJr/git-samples/master/git_stages.png">
 </p>
 
 <br/>
