@@ -31,6 +31,13 @@ git config --global user.name "Nome da pessoa"
 git config --global user.email "email.da.pessoa@email.com"
 ```
 
+- Outra configuração que é considerada importante é o editor padrão utilizado pelo Git em alguma situações que precisam de intervenção do usuário. O comando para alterar o editor padrão utilizado pelo Git é o seguinte:
+```
+git config --global core.editor "nano"
+```
+**Obs:.** O editor configurado neste exemplo foi o Nano.
+**Obs:.** Para verificar se o comando surtiu efeito, use: *git config --list*.
+
 ## Comandos
 
 - Para fazer a criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
