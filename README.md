@@ -202,6 +202,12 @@ git stash pop
 git stash show
 ```
 
+- Para visualizar uma lista de diff's dos arquivos alterados, execute:
+```
+git stash show -p
+```
+**Obs:.** O parâmtro *-p* é de patch, ou *--patch*.
+
 - Para adicionar um repositório remoto ao repositório local do git, utilize o seguinte comando:
 ```
 git remote add origin https://github.com/PedroFerreiraCJr/git-samples.git
