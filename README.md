@@ -28,14 +28,25 @@ export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 git init
 ```
 **Obs:.** Para um projeto criado do zero, sem diretório do projeto, é possível executar o comando que segue:
+
+- Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
 ```
 git init nome-projeto
 ```
 
-- Para fazer a criação de um repositório local a partir de um repositório já existente hospedado, por exemplo, em um repositório do Github, utilize o seguinte comando:
+- Para fazer criação de um novo repositório que será utilizado como servidor remoto, é possível usar o seguinte comando:
+```
+git init --bare
+```
+> Com o comando git init --bare você está criando um repositório que é pushable. Geralmente os repositórios bare são criados no servidor e são considerados repositórios para armazenamento, em contraste aos repositórios que vão nas máquinas dos desenvolvedores que seriam os repositórios de desenvolvimento, criados com o comando git init (sem o --bare).
+
+[FAQ do StackOverflow](https://pt.stackoverflow.com/questions/80182/qual-%C3%A9-a-diferen%C3%A7a-entre-git-init-e-git-init-bare)
+
+- Para fazer a criação de um repositório local a partir de um repositório já existente hospedado, por exemplo, em um serviço de hospedagem de repositório do Git, utilize o seguinte comando:
 ```
 git clone https://github.com/PedroFerreiraCJr/git-samples.git
 ```
+**Obs:.** Neste caso, foi usado uma url de repositório que está hospedado no serviço do GitHub.
 
 - O mesmo comando permite clonar um repositório que existe localmente; supondo que mywebsite seja um repositório local do git, para clonar o mesmo para outro repositório local, execute:
 ```
@@ -83,12 +94,26 @@ git reset --hard HEAD
 git commit -m "Mensagem do commit"
 ```
 
-- Para visualizar todos os commit efetuados em determinado na branch atual, utilize o seguinte comando:
+- Para visualizar todos os commits efetuados em determinada branch, utilize o seguinte comando:
 ```
 git log
 ```
 **Obs:.** Para visualizar somente os últimos 5 commits, por exemplo, utilize o parametro: -n 5.
 
+- Para visualizar todos os commits efetuados em determinada branch de forma resumida, mostrando somente o hash do commit e mensagem, utilize o seguinte comando:
+```
+git log --oneline
+```
+
+- Para visualizar todos os commits efetuados em determinada branch, mostrando as alterações que foram feitas nos arquivos, utilize o seguinte comando:
+```
+git log -p
+```
+
+- Para visualizar um resumo de todos os arquivos alterados em todos os commits, utilize o seguinte comando:
+```
+git log --stat
+```
 [Documentação do comando log](https://git-scm.com/docs/git-log)
 
 - Para visualizar os arquivos que foram alterados em determinado commit, utilize o seguinte comando:
@@ -103,10 +128,17 @@ git show --pretty="" --name-only d542f8a1b1d8c0f409222cf7999dd742e10bc6b1
 git branch nome_da_nova_branch
 ```
 
-- Para listar as branchs existentes, utilize o seguinte comando:
+- Para listar todas as branchs locais, utilize o seguinte comando:
+```
+git branch
+```
+**Obs:.** A branch que contém um asterísco, é a branch que está em uso.
+
+- Para listar todas as branchs existentes, seja local ou remota, utilize o seguinte comando:
 ```
 git branch -a
 ```
+**Obs:.** A branch que contém um asterísco, é a branch que está em uso.
 
 [Documentação do comando branch](https://git-scm.com/docs/git-branch)
 
@@ -115,7 +147,7 @@ git branch -a
 git checkout nome_da_branch
 ```
 
-**Obs:.** O comando checkout pode ser utilizado para para executar duas ações, que são, criar uma nova branch e imediatamente trocar para o nova branch. O comando é o seguinte:
+**Obs:.** O comando checkout pode ser utilizado para para executar duas ações, que são: criar uma nova branch e imediatamente trocar para o nova branch; e também navegar pelo histórico de commits do git. O comando é o seguinte cria uma nova branch e torna ela o ramo atual:
 ```
 git checkout -b nome_da_nova_branch
 ```
@@ -130,6 +162,7 @@ git branch -d nome_da_branch
 git remote add origin https://github.com/PedroFerreiraCJr/git-samples.git
 ```
 
+**Obs:.** "origin" é um alias para a branch remota.
 **Obs:.** É possível adicionar mais de uma branch remota.
 
 - Para visualizar as branchs remotas do repositório local do git, utilize o seguinte comando:
@@ -154,7 +187,7 @@ git remote --help
 git pull origin master
 ```
 
-**Obs:.** O comando acima está apontando para o repositório remoto origin e branch master. Altera os parametros *origin* e *master* para o repositório remoto e branch, respectivamente.
+**Obs:.** O comando acima está apontando para o repositório remoto origin e branch master. Alterar os parametros *origin* e *master* para o repositório remoto e branch, respectivamente, de sua escolha.
 
 [Documentação do comando pull](https://git-scm.com/docs/git-pull)
 
@@ -163,21 +196,21 @@ git pull origin master
 git push -u origin master
 ```
 
-**Obs:.** Utilize o parametro *-u* equivamente à *--set-upstream* somente quando a branch ainda não existir no repositório remoto.
+**Obs:.** Utilize o parâmetro *-u* equivamente à *--set-upstream* somente quando a branch ainda não existir no repositório remoto.
 
 - Para mandar todas as alterações (commits) do repositório local para o repositório remoto, utilize o seguinte comando:
 ```
 git push origin master
 ```
 
-**Obs:.** É possível trocar os parametros: *origin*, e *master*; para a um repositório remoto e branch remota pré-existente.
+**Obs:.** É possível trocar os parâmetros: *origin*, e *master*, para um repositório remoto e branch remota pré-existente.
 
 [Documentação do comando push](https://git-scm.com/docs/git-push)
 
 - Para remover uma branch do repositório remoto, utilize o seguinte comando:
 ```
-git branch -d nome_da_branch_local
-git push origin --delete nome_da_branch_remote
+git branch -d nome_da_branch_local    // remove a branch localmente
+git push origin --delete nome_da_branch_remote    // remove a branch no servidor remoto
 ```
 
 **Obs:.** O repositório remoto, neste caso *origin* pode ser troacado por outro caso necessário.
