@@ -166,7 +166,7 @@ git stash
 ```
 **Obs:.** O comando stash só permanece localmente.
 
-- O comando seguinte faz a listagem dos indices de stash salvos atualmente na branch atual:
+- O comando seguinte faz a listagem dos indices de stash salvos atualmente na branch:
 ```
 git stash list
 ```
