@@ -36,6 +36,7 @@ git config --global user.email "email.da.pessoa@email.com"
 git config --global core.editor "nano"
 ```
 **Obs:.** O editor configurado neste exemplo foi o Nano.
+</br>
 **Obs:.** Para verificar se o comando surtiu efeito, use: *git config --list*.
 
 ## Comandos
