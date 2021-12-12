@@ -160,6 +160,44 @@ git checkout -b nome_da_nova_branch
 git branch -d nome_da_branch
 ```
 
+- O comando a seguir permite que seja feita a troca de contexto, salvando temporariamente as alterações (sem commit, tanto as Tracked quando as Untracked) na branch atual, para que seja possível trabalhar em outra branch; após este comando a branch se tornar "clean":
+```
+git stash
+```
+**Obs:.** O comando stash só permanece localmente.
+
+- O comando seguinte faz a listagem dos indices de stash salvos atualmente na branch atual:
+```
+git stash list
+```
+
+- Para remover todos os indices de stash salvos para serem aplicados posteriormente, basta executar o comando a seguir:
+```
+git stash clear
+```
+**Obs:.** Este comando descarta todas as alterações salvas temporariamente no stash.
+
+- Para remover somente um determinado índice do stash, execute o comando seguinte:
+```
+git stash drop stash@{1}
+```
+**Obs:.** Este comando descarta o índice do stash de valor 1.
+
+- Para aplicar as alterações salvas temporariamente no stash, mesmo existindo mais de um índice no stash, basta executar o comando seguinte para aplicar o último índice:
+```
+git stash apply
+```
+**Obs:.** Este comando não descarta o índice do stash.
+
+- Para aplicar as alterações salvas temporariamente no último índice do stash, basta executar o seguinte comando para aplicar o último índice e remover automaticamente:
+```
+git stash pop
+```
+- Para ter uma lista de arquivos alterados que foram salvos temporariamente pelo comando stash, basta usar o comando a seguir:
+```
+git stash show
+```
+
 - Para adicionar um repositório remoto ao repositório local do git, utilize o seguinte comando:
 ```
 git remote add origin https://github.com/PedroFerreiraCJr/git-samples.git
