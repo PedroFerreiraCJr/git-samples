@@ -23,16 +23,19 @@ export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 ## Comandos
 
-- Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
+- Para fazer a criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
 ```
 git init
 ```
-**Obs:.** Para um projeto criado do zero, sem diretório do projeto, é possível executar o comando que segue:
+**Obs:.** Um repositório Git nada mais é do que um diretório que contém um subdiretório chamado *.git*; este é o diretório que o git usa para controlar o versionamento do projeto.
+</br>
+**Obs:.** Com relação ao comentado acima, para remover o controle de versão de um projeto, basta remover a pasta que faz o controle do git (*.git*) de dentro do projeto.
 
 - Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
 ```
-git init nome-projeto
+git init nome-do-projeto
 ```
+**Obs:.** Este comando é utilizado em um projeto criado do zero, sem ter o diretório do projeto criado, é possível executar o comando que segue para criar a pasta e inicializar um repositório Git:
 
 - Para fazer criação de um novo repositório que será utilizado como servidor remoto, é possível usar o seguinte comando:
 ```
@@ -163,6 +166,7 @@ git remote add origin https://github.com/PedroFerreiraCJr/git-samples.git
 ```
 
 **Obs:.** "origin" é um alias para a branch remota.
+</br>
 **Obs:.** É possível adicionar mais de uma branch remota.
 
 - Para visualizar as branchs remotas do repositório local do git, utilize o seguinte comando:
