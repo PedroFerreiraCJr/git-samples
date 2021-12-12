@@ -165,7 +165,10 @@ git branch -d nome_da_branch
 git stash
 ```
 **Obs:.** O comando stash só permanece localmente.
+</br>
 **Obs:.** Arquivos ignorados pelo Git, assim como não rastreados não são adicionados ao stash.
+</br>
+**Obs:.** Para que seja possível adicionar um arquivo não rastreado pelo Git ao stash, é necessário passar o parâmetro -u (ou --include-untracked) para esse propósito.
 
 - O comando seguinte faz a listagem dos indices de stash salvos atualmente na branch:
 ```
