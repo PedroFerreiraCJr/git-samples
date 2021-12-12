@@ -160,11 +160,12 @@ git checkout -b nome_da_nova_branch
 git branch -d nome_da_branch
 ```
 
-- O comando a seguir permite que seja feita a troca de contexto, salvando temporariamente as alterações (sem commit, tanto as Tracked quando as Untracked) na branch atual, para que seja possível trabalhar em outra branch; após este comando a branch se tornar "clean":
+- O comando a seguir permite que seja feita a troca de contexto, salvando temporariamente as alterações (sem commit, para arquivos modificados e adicionados com o comando *git add*) na branch atual, para que seja possível trabalhar em outra branch; após este comando a branch se tornar "clean":
 ```
 git stash
 ```
 **Obs:.** O comando stash só permanece localmente.
+**Obs:.** Arquivos ignorados pelo Git, assim como não rastreados não são adicionados ao stash.
 
 - O comando seguinte faz a listagem dos indices de stash salvos atualmente na branch:
 ```
