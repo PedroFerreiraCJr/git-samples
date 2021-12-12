@@ -21,6 +21,16 @@ parse_git_branch() {
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 ```
 
+## Configuração inicial
+
+- Para que seja possível utilizar o Git da maneira correta é necessário configurar alguma informações relacionadas ao usuário que está atualmente usando a ferramenta. Esses comandos são necessários para que o Git faça o reconhecimento do usuário atualmente fazendo o commit, pois ele não solicita credenciais como o email, ou nome de usuário.
+
+- Para fazer a criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
+```
+git config --global user.name "Nome da pessoa"
+git config --global user.email "email.da.pessoa@email.com"
+```
+
 ## Comandos
 
 - Para fazer a criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
