@@ -144,7 +144,7 @@ git show --pretty="" --name-only d542f8a1b1d8c0f409222cf7999dd742e10bc6b1
 
 [Documentação do comando show](https://git-scm.com/docs/git-show)
 
-- Para criar uma nova ramificação a partir da branch atual, utilize o seguiente comando:
+- Para criar uma nova ramificação a partir da branch atual, utilize o seguinte comando:
 ```
 git branch nome_da_nova_branch
 ```
@@ -168,15 +168,29 @@ git branch -a
 git checkout nome_da_branch
 ```
 
-**Obs:.** O comando checkout pode ser utilizado para para executar duas ações, que são: criar uma nova branch e imediatamente trocar para o nova branch; e também navegar pelo histórico de commits do git. O comando é o seguinte cria uma nova branch e torna ela o ramo atual:
+**Obs:.** O comando checkout pode ser utilizado para para executar duas ações, que são: criar uma nova branch e imediatamente trocar para o nova branch; e também navegar pelo histórico de commits do git. O comando seguinte cria uma nova branch e torna ela o ramo atual:
 ```
 git checkout -b nome_da_nova_branch
 ```
 
-- Para deletar uma branch, utilize o seguinte comando:
+- Para deletar uma branch local, utilize o seguinte comando:
 ```
 git branch -d nome_da_branch
 ```
+**Obs:.** O parâmtro -d é um atalho para --delete.
+
+- Para forçar a deleção uma branch local, utilize o seguinte comando:
+```
+git branch -D nome_da_branch
+```
+**Obs:.** O parâmtro -D é um atalho para os parâmetros --delete --force.
+
+- Para forçar a deleção uma branch local, utilize o seguinte comando:
+```
+git push origin --delete nome_da_branch
+```
+**Obs:.** O alias origin é o identificador do servidor remoto.
+**Obs:.** Este comando deve funcionar mesmo não tendo deletado a branch localmente. 
 
 - O comando a seguir permite que seja feita a troca de contexto, salvando temporariamente as alterações (sem commit, para arquivos modificados e adicionados com o comando *git add*) na branch atual, para que seja possível trabalhar em outra branch; após este comando a branch se tornar "clean":
 ```
