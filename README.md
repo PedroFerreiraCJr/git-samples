@@ -49,7 +49,7 @@ git init
 </br>
 **Obs:.** Com relação ao comentado acima, para remover o controle de versão de um projeto, basta remover a pasta que faz o controle do git (*.git*) de dentro do projeto.
 
-- Para fazer criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
+- Para fazer a criação de um novo repositório local fornecendo o nome pasta onde o repositório deve ser criado, use:
 ```
 git init nome-do-projeto
 ```
