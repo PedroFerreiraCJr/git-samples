@@ -74,48 +74,51 @@ git clone https://github.com/PedroFerreiraCJr/git-samples.git
 git clone mywebsite/ mywebsite2
 ```
 
-- O comando abaixo mostra o estado atual do diretório de trabalho (working directory) do git:
+- O comando abaixo mostra o estado atual do diretório de trabalho (working directory) do Git:
 ```
 git status
 ```
 **Obs:.** Os arquivos listados na cor vermelha são os arquivos que foram alterados (modified) ou ainda não estão sendo rastreados (untracked) pelo git.
 
-- Para adicionar os arquivos alterados ou criados no commit, utilize o comando:
+- Para adicionar os arquivos alterados ou criados ao commit, utilize o comando:
 ```
 git add [.|file_name|--all|-A]
 ```
 
-- Antes de realmente fazer o commit dos arquivos e salvar o estado atual do diretório de trabalho, caso seja preciso remover qualquer arquivo rastreado pelo git do commit atual (após ter executado o comando git add .), utilize o comando:
+- Antes de realmente fazer o commit dos arquivos que estão no diretório de trabalho do Git, e salvar o estado atual no histórico de commits, caso seja preciso remover qualquer arquivo rastreado pelo Git do commit atual (após ter executado o comando git add .), utilize o comando:
 ```
-git reset HEAD nome_do_arquivo
-```
-
-**Obs:.** Outra forma de remover um arquivo da área de trabalho do git, e deixar de fazer o rastreamentod o arquivo, é executando o comando:
-```
-git rm --cached nome_do_arquivo
+git reset HEAD <nome_do_arquivo>
 ```
 
-- Para desfazer alterações feitas em um arquivo que está no diretório de trabalho (working directory), utilize o comando:
+**Obs:.** Outra forma de remover um arquivo do diretório de trabalho do Git, e deixar de fazer o rastreamento do arquivo deixando o arquivo na Staging Area, é executando o comando:
 ```
-git checkout nome_do_arquivo
+git rm --cached <nome_do_arquivo>
 ```
 
-- Utilize o seguinte comando para remover o arquivo do repositório local do git, assim como remover do sistema de arquivos:
+- Para desfazer alterações feitas em um arquivo que está no diretório de trabalho, utilize o comando:
 ```
-git rm nome_do_arquivo
+git restore <nome_do_arquivo>
 ```
-**Obs:.** O arquivo a ser removido já deve estar sendo rastreado pelo git.
 
-- Para desfazer todas as alterações no diretório de trabalho do git, e apontar para o último estado rastreado por commit, utilize o comando:
+- Utilize o seguinte comando para remover o arquivo do repositório local do Git, assim como remover do sistema de arquivos:
+```
+git rm <nome_do_arquivo>
+```
+**Obs:.** O arquivo a ser removido já deve estar sendo rastreado pelo Git.
+</br>
+**Obs:.** Para remover um arquivo do rastreamento do Git, basta adicioná-lo ao arquivo .gitignore.
+
+- Para desfazer todas as alterações no diretório de trabalho do Git, e apontar para o último estado rastreado por commit, utilize o comando:
 ```
 git reset --hard HEAD
 ```
-- Quando estiver pronto para salvar o estado dos arquivos no diretório de trabalho, utilize o comando a seguir:
+
+- Quando estiver pronto para salvar o estado dos arquivos no diretório de trabalho, primeiro use o comando *add* e depois, utilize o comando a seguir:
 ```
 git commit -m "Mensagem do commit"
 ```
 
-- Para visualizar todos os commits efetuados em determinada branch, utilize o seguinte comando:
+- Para visualizar todos os commits efetuados em determinada branch (ramo), utilize o seguinte comando:
 ```
 git log
 ```
@@ -144,9 +147,9 @@ git show --pretty="" --name-only d542f8a1b1d8c0f409222cf7999dd742e10bc6b1
 
 [Documentação do comando show](https://git-scm.com/docs/git-show)
 
-- Para criar uma nova ramificação a partir da branch atual, utilize o seguinte comando:
+- Para criar uma nova branch (ramificação) a partir da branch atual, utilize o seguinte comando:
 ```
-git branch nome_da_nova_branch
+git branch <nome_da_nova_branch>
 ```
 
 - Para listar todas as branchs locais, utilize o seguinte comando:
@@ -168,28 +171,33 @@ git branch -a
 git checkout nome_da_branch
 ```
 
-**Obs:.** O comando checkout pode ser utilizado para para executar duas ações, que são: criar uma nova branch e imediatamente trocar para o nova branch; e também navegar pelo histórico de commits do git. O comando seguinte cria uma nova branch e torna ela o ramo atual:
+**Obs:.** O comando checkout pode ser utilizado para para executar algumas operações, sendo: criar uma nova branch e imediatamente trocar para o nova branch; navegar pelo histórico de commits do Git.
+
+- O comando seguinte cria uma nova branch e torna ela o ramo atual:
 ```
-git checkout -b nome_da_nova_branch
+git checkout -b <nome_da_nova_branch>
 ```
 
 - Para deletar uma branch local, utilize o seguinte comando:
 ```
-git branch -d nome_da_branch
+git branch -d <nome_da_branch>
 ```
 **Obs:.** O parâmtro -d é um atalho para --delete.
 
-- Para forçar a deleção uma branch local, utilize o seguinte comando:
+- Para forçar a deleção em uma branch local, utilize o seguinte comando:
 ```
 git branch -D nome_da_branch
 ```
 **Obs:.** O parâmtro -D é um atalho para os parâmetros --delete --force.
+</br>
+**Obs:.** A deleção forçada pode ser utilizada quando a branch não foi mesclada, e mesmo assim se deseja deletá-la.
 
-- Para forçar a deleção uma branch local, utilize o seguinte comando:
+- Para forçar a deleção uma branch remota, utilize o seguinte comando:
 ```
-git push origin --delete nome_da_branch
+git push origin --delete <nome_da_branch>
 ```
 **Obs:.** O alias origin é o identificador do servidor remoto.
+</br>
 **Obs:.** Este comando deve funcionar mesmo não tendo deletado a branch localmente. 
 
 - O comando a seguir permite que seja feita a troca de contexto, salvando temporariamente as alterações (sem commit, para arquivos modificados e adicionados com o comando *git add*) na branch atual, para que seja possível trabalhar em outra branch; após este comando a branch se tornar "clean":
@@ -202,30 +210,30 @@ git stash
 </br>
 **Obs:.** Para que seja possível adicionar um arquivo não rastreado pelo Git ao stash, é necessário passar o parâmetro -u (ou --include-untracked) para esse propósito.
 
-- O comando seguinte faz a listagem dos indices de stash salvos atualmente na branch:
+- O comando seguinte faz a listagem dos índices de stash salvos atualmente:
 ```
 git stash list
 ```
 
-- Para remover todos os indices de stash salvos para serem aplicados posteriormente, basta executar o comando a seguir:
+- Para remover todos os índices de stash salvos para serem aplicados posteriormente, basta executar o comando a seguir:
 ```
 git stash clear
 ```
 **Obs:.** Este comando descarta todas as alterações salvas temporariamente no stash.
 
-- Para remover somente um determinado índice do stash, execute o comando seguinte:
+- Para remover somente um determinado índice do stash, execute o seguinte comando:
 ```
 git stash drop stash@{1}
 ```
 **Obs:.** Este comando descarta o índice do stash de valor 1.
 
-- Para aplicar as alterações salvas temporariamente no stash, mesmo existindo mais de um índice no stash, basta executar o comando seguinte para aplicar o último índice:
+- Para aplicar as alterações salvas temporariamente no stash, mesmo existindo mais de um índice no stash, basta executar o seguinte comando para aplicar o primeiro índice:
 ```
 git stash apply
 ```
 **Obs:.** Este comando não descarta o índice do stash.
 
-- Para aplicar as alterações salvas temporariamente no último índice do stash, basta executar o seguinte comando para aplicar o último índice e remover automaticamente:
+- Para aplicar as alterações salvas temporariamente no primeiro índice do stash, basta executar o seguinte comando para aplicar o último índice e remover automaticamente:
 ```
 git stash pop
 ```
@@ -244,7 +252,6 @@ git stash show -p
 ```
 git remote add origin https://github.com/PedroFerreiraCJr/git-samples.git
 ```
-
 **Obs:.** "origin" é um alias para a branch remota.
 </br>
 **Obs:.** É possível adicionar mais de uma branch remota.
@@ -256,48 +263,37 @@ git remote -v
 
 - Para remover um repositório remoto do repositório local, utilize o seguinte comando:
 ```
-git remote rm nome_do_repositório_remoto
+git remote rm <nome_do_repositório_remoto>
 ```
 
 - Para obter mais informações sobre o comando *remote* no próprio terminal, utilize o comando:
 ```
-git remote --help
+git help remote
 ```
 
 [Documentação do comando remote](https://git-scm.com/docs/git-remote)
 
 - Para baixar todas as alterações do repositório remoto para o repositório local, utilize o seguinte comando:
 ```
-git pull origin master
+git pull <origin> <master>
 ```
-
 **Obs:.** O comando acima está apontando para o repositório remoto origin e branch master. Alterar os parametros *origin* e *master* para o repositório remoto e branch, respectivamente, de sua escolha.
 
 [Documentação do comando pull](https://git-scm.com/docs/git-pull)
 
-- Para criar a branch do repositório local na branch remota, utilize o seguinte comando:
+- Para enviar a branch do repositório local para a servidor remoto, utilize o seguinte comando:
 ```
-git push -u origin master
+git push -u <origin> <master>
 ```
-
 **Obs:.** Utilize o parâmetro *-u* equivamente à *--set-upstream* somente quando a branch ainda não existir no repositório remoto.
 
 - Para mandar todas as alterações (commits) do repositório local para o repositório remoto, utilize o seguinte comando:
 ```
-git push origin master
+git push <origin> <master>
 ```
-
 **Obs:.** É possível trocar os parâmetros: *origin*, e *master*, para um repositório remoto e branch remota pré-existente.
 
 [Documentação do comando push](https://git-scm.com/docs/git-push)
-
-- Para remover uma branch do repositório remoto, utilize o seguinte comando:
-```
-git branch -d nome_da_branch_local    // remove a branch localmente
-git push origin --delete nome_da_branch_remote    // remove a branch no servidor remoto
-```
-
-**Obs:.** O repositório remoto, neste caso *origin* pode ser troacado por outro caso necessário.
 
 - Para visualizar todas as modificações na branch atual, utilize o seguinte comando:
 ```
@@ -311,7 +307,7 @@ git diff --cached
 
 - Para visualizar as diferenças entre duas branchs, utilize o seguinte comando:
 ```
-git diff nome_da_branch1 nome_da_branch2
+git diff <nome_da_branch1> <nome_da_branch2>
 ```
 
 [Documentação do comando diff](https://git-scm.com/docs/git-diff)
