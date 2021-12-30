@@ -182,6 +182,29 @@ git checkout nome_da_branch
 git checkout -b <nome_da_nova_branch>
 ```
 
+- Outra funcionalidade muito importante do Git, conforme já mencionado, são as branchs. Com elas é possível criar uma linha de desenvolvimento paralela a principal. E quando for preciso mesclar as funcionalidades desenvolvidas, por exemplo, uma feature de login (branch: feature-login), basta usar o comando:
+```
+git checkout master
+git merge feature-login
+```
+
+- Caso seja preciso abortar a mesclagem dos arquivos por qualquer motivo, em caso de conflito por exemplo, basta executar o comando abaixo, e a mesclagem será cancelada:
+ ```
+ git merge --abort
+ ```
+ 
+- Para analisar e corrigir qualquer conflito que tenha sido causado no momento do merge entre branchs usando o vscode, é possível usar o comando:
+```
+git mergetool
+```
+**Obs:.** Para usar outra ferramenta de análise de conflito, use o parâmetro -t e o comando, exemplo: -t vscode.
+
+-  Para visualizar as modificações nos arquivos da branch atual usando um editor de análise de diferenças padrão, basta executar o comando abaixo:
+```
+git difftool
+```
+**Obs:.** Caso se depare com a criação de arquivos como: *.orig, .BACKUP, .BASE, .LOCAL, .REMOTE; e quiser eliminar esses arquivos no momento da correção do merge e commit, basta executar a seguinte configuração no Git: *git config --global mergetool.keepBackup false*
+
 - Para deletar uma branch local, utilize o seguinte comando:
 ```
 git branch -d <nome_da_branch>
