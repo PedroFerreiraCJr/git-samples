@@ -37,6 +37,12 @@ git config --global core.editor "nano"
 </br>
 **Obs:.** Para verificar se o comando surtiu efeito, use: *git config --list*.
 
+- Uma forma de visualizar o arquivo global de configuração do Git, é através do comando abaixo:
+```
+git config --global -e
+```
+**Obs:.** Isso possibilita visualizar e alterar o arquivo.
+
 ## Comandos
 
 - Para fazer a criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
