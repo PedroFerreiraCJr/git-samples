@@ -43,6 +43,25 @@ git config --global -e
 ```
 **Obs:.** Isso possibilita visualizar e alterar o arquivo.
 
+- Exemplo de arquivo de configuração que usa o editor vscode para algumas das operações que precisam de intervenção do usuário:
+<pre>
+[user]
+	email = pedroferreiracjr@gmail.com
+	name = Pedro Júnior
+[core]
+	editor = code --wait
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool]
+	keepBackup = false
+</pre>
+
 ## Comandos
 
 - Para fazer a criação de um novo repositório local, utilize o comando abaixo, na pasta onde o repositório deve ser criado:
