@@ -113,14 +113,14 @@ git add [.|file_name|--all|-A]
 git reset HEAD <nome_do_arquivo>
 ```
 
-**Obs:.** Outra forma de remover um arquivo do diretório de trabalho do Git, e deixar de fazer o rastreamento do arquivo deixando o arquivo na Staging Area, é executando o comando:
+**Obs:.** Outra forma de remover um arquivo da Staging Area do Git e, deixar de fazer o rastreamento do arquivo deixando ele no diretório de trabalho, é executando o comando a seguir:
 ```
 git rm --cached <nome_do_arquivo>
 ```
 
-- Para desfazer alterações feitas em um arquivo que está no diretório de trabalho, utilize o comando:
+- Para desfazer alterações feitas em um arquivo que está no Staging Area, utilize o comando:
 ```
-git restore <nome_do_arquivo>
+git restore --staged <nome_do_arquivo>
 ```
 
 - Utilize o seguinte comando para remover o arquivo do repositório local do Git, assim como remover do sistema de arquivos:
@@ -134,6 +134,11 @@ git rm <nome_do_arquivo>
 - Para desfazer todas as alterações no diretório de trabalho do Git, e apontar para o último estado rastreado por commit, utilize o comando:
 ```
 git reset --hard HEAD
+```
+
+- Qual o comando para listar todos os arquivos rastreados pelo Git?
+```
+git ls-tree -r master --name-only
 ```
 
 - Quando estiver pronto para salvar o estado dos arquivos no diretório de trabalho, primeiro use o comando *add* e depois, utilize o comando a seguir:
@@ -161,6 +166,13 @@ git log -p
 ```
 git log --stat
 ```
+
+- Qual o comando para listar todos os arquivos rastreados e até mesmo os deletados?
+```
+git log --pretty=format: --name-only --diff-filter=A | sort - | sed '/^$/d'
+```
+[Stack Overflow](https://stackoverflow.com/questions/15606955/how-can-i-make-git-show-a-list-of-the-files-that-are-being-tracked/15606998)
+</br>
 [Documentação do comando log](https://git-scm.com/docs/git-log)
 
 - Para visualizar os arquivos que foram alterados em determinado commit, utilize o seguinte comando:
