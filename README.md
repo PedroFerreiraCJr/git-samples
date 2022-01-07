@@ -250,11 +250,11 @@ git branch -D nome_da_branch
 </br>
 **Obs:.** A deleção forçada pode ser utilizada quando a branch não foi mesclada, e mesmo assim se deseja deletá-la.
 
-- Para forçar a deleção uma branch remota, utilize o seguinte comando:
+- Para forçar a deleção de uma branch remota, utilize o seguinte comando:
 ```
 git push origin --delete <nome_da_branch>
 ```
-**Obs:.** O alias origin é o identificador do servidor remoto.
+**Obs:.** O alias 'origin' é o identificador do servidor remoto.
 </br>
 **Obs:.** Este comando deve funcionar mesmo não tendo deletado a branch localmente. 
 
