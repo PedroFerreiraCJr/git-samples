@@ -314,6 +314,12 @@ git remote add origin https://github.com/PedroFerreiraCJr/git-samples.git
 </br>
 **Obs:.** É possível adicionar mais de uma branch remota.
 
+- Forma de adicionar um repositório remoto a uma repositório local que utiliza SSH
+**Obs: ** A configuração da chave SSH deve ter sido feita previamente.
+```
+git remote set-url origin git@github.com:pedroferreiracjr/your-repository.git
+```
+
 - Para visualizar as branchs remotas do repositório local do git, utilize o seguinte comando:
 ```
 git remote -v
