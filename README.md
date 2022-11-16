@@ -131,9 +131,14 @@ git rm <nome_do_arquivo>
 </br>
 **Obs:.** Para remover um arquivo do rastreamento do Git, basta adicioná-lo ao arquivo .gitignore.
 
-- Para desfazer todas as alterações no diretório de trabalho do Git, e apontar para o último estado rastreado por commit, utilize o comando:
+- Para desfazer todas as alterações no diretório de trabalho do Git e, apontar para o último estado rastreado por commit, utilize o comando:
 ```
 git reset --hard HEAD
+```
+
+- Para desfazer o último commit realizado sem perder as alterações feitas nele, trazendo os arquivos modificados para o diretório de trabalho do Git, utilize o seguinte comando:
+```
+git reset --soft HEAD~1
 ```
 
 - Qual o comando para listar todos os arquivos rastreados pelo Git?
