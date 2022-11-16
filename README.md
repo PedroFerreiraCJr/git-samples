@@ -146,23 +146,23 @@ git reset --soft HEAD~1
 git ls-tree -r master --name-only
 ```
 
-- Quando estiver pronto para salvar o estado dos arquivos no diretório de trabalho, primeiro use o comando *add* e depois, utilize o comando a seguir:
+- Quando for preciso realizar um novo commit, basta adicionar os arquivos alterados que estão no diretório de trabalho a Stage Area do Git; para isso é necessário usar o comando *add* e, depois, o comando a seguir:
 ```
-git commit -m "Mensagem do commit"
+git commit -m "mensagem que deve descrever as alterações realizadas no projeto"
 ```
 
-- Para visualizar todos os commits efetuados em determinada branch (ramo), utilize o seguinte comando:
+- Para visualizar todos os commits efetuados em determinada branch (ramo), use o seguinte comando:
 ```
 git log
 ```
-**Obs:.** Para visualizar somente os últimos 5 commits, por exemplo, utilize o parametro: -n 5.
+**Obs:.** Para visualizar somente os últimos 5 commits, basta fornecer o parâmetro: -n 5.
 
-- Para visualizar todos os commits efetuados em determinada branch de forma resumida, mostrando somente o hash do commit e mensagem, utilize o seguinte comando:
+- Para visualizar todos os commits efetuados em determinada branch de forma resumida, mostrando somente o hash e mensagem do commit, utilize o seguinte comando:
 ```
 git log --oneline
 ```
 
-- Para visualizar todos os commits efetuados em determinada branch, mostrando as alterações que foram feitas nos arquivos, utilize o seguinte comando:
+- Para visualizar todos os commits efetuados em determinada branch, mostrando as alterações que foram realizadas em cada um dos arquivos, use o seguinte comando:
 ```
 git log -p
 ```
@@ -182,49 +182,49 @@ git log --pretty=format: --name-only --diff-filter=A | sort - | sed '/^$/d'
 
 - Para visualizar os arquivos que foram alterados em determinado commit, utilize o seguinte comando:
 ```
-git show --pretty="" --name-only d542f8a1b1d8c0f409222cf7999dd742e10bc6b1
+git show --pretty="" --name-only <hash-do-commit>
 ```
 
 [Documentação do comando show](https://git-scm.com/docs/git-show)
 
 - Para criar uma nova branch (ramificação) a partir da branch atual, utilize o seguinte comando:
 ```
-git branch <nome_da_nova_branch>
+git branch <nome-da-branch>
 ```
 
 - Para listar todas as branchs locais, utilize o seguinte comando:
 ```
 git branch
 ```
-**Obs:.** A branch que contém um asterísco, é a branch que está em uso.
+**Obs:.** A branch que contém um asterisco, é a branch que está em uso.
 
 - Para listar todas as branchs existentes, seja local ou remota, utilize o seguinte comando:
 ```
 git branch -a
 ```
-**Obs:.** A branch que contém um asterísco, é a branch que está em uso.
+**Obs:.** A branch que contém um asterisco, é a branch que está em uso.
 
 [Documentação do comando branch](https://git-scm.com/docs/git-branch)
 
-- Para trocar de branch, utilize o seguiente comando:
+- Para trocar de branch, utilize o seguinte comando:
 ```
-git checkout nome_da_branch
+git checkout <nome-da-branch>
 ```
 
-**Obs:.** O comando checkout pode ser utilizado para para executar algumas operações, sendo: criar uma nova branch e imediatamente trocar para o nova branch; navegar pelo histórico de commits do Git.
+**Obs:.** O comando checkout pode ser utilizado para executar algumas operações, sendo: criar uma nova branch e imediatamente trocar para ela; navegar pelo histórico de commits do Git.
 
 - O comando seguinte cria uma nova branch e torna ela o ramo atual:
 ```
-git checkout -b <nome_da_nova_branch>
+git checkout -b <nome-da-branch>
 ```
 
-- Outra funcionalidade muito importante do Git, conforme já mencionado, são as branchs. Com elas é possível criar uma linha de desenvolvimento paralela a principal. E quando for preciso mesclar as funcionalidades desenvolvidas, por exemplo, uma feature de login (branch: feature-login), basta usar o comando:
+- Outra funcionalidade muito importante do Git, conforme já mencionado, são as branchs. Com elas é possível criar uma linha de desenvolvimento paralela a principal. E quando for preciso mesclar as funcionalidades desenvolvidas, por exemplo, uma feature de login (branch: feature/login), basta usar o comando:
 ```
 git checkout master
-git merge feature-login
+git merge feature/login
 ```
 
-- Caso seja preciso abortar a mesclagem dos arquivos por qualquer motivo, em caso de conflito por exemplo, basta executar o comando abaixo, e a mesclagem será cancelada:
+- Caso seja preciso abortar a mesclagem dos arquivos por qualquer motivo, em caso de conflito, por exemplo, basta executar o comando abaixo, e a mesclagem será cancelada:
  ```
  git merge --abort
  ```
@@ -243,13 +243,13 @@ git difftool
 
 - Para deletar uma branch local, utilize o seguinte comando:
 ```
-git branch -d <nome_da_branch>
+git branch -d <nome-da-branch>
 ```
 **Obs:.** O parâmtro -d é um atalho para --delete.
 
 - Para forçar a deleção em uma branch local, utilize o seguinte comando:
 ```
-git branch -D nome_da_branch
+git branch -D <nome-da-branch>
 ```
 **Obs:.** O parâmtro -D é um atalho para os parâmetros --delete --force.
 </br>
@@ -257,13 +257,13 @@ git branch -D nome_da_branch
 
 - Para forçar a deleção de uma branch remota, utilize o seguinte comando:
 ```
-git push origin --delete <nome_da_branch>
+git push origin --delete <nome-da-branch>
 ```
 **Obs:.** O alias 'origin' é o identificador do servidor remoto.
 </br>
 **Obs:.** Este comando deve funcionar mesmo não tendo deletado a branch localmente. 
 
-- O comando a seguir permite que seja feita a troca de contexto, salvando temporariamente as alterações (sem commit, para arquivos modificados e adicionados com o comando *git add*) na branch atual, para que seja possível trabalhar em outra branch; após este comando a branch se tornar "clean":
+- O comando a seguir permite que seja feita a troca de contexto, salvando temporariamente as alterações (sem commit, para arquivos modificados e adicionados com o comando *git add*) da branch atual, para que seja possível trabalhar em outra branch, ou até mesmo, levar as alterações feitas até o momento para outra branch; após este comando a branch se tornar "clean":
 ```
 git stash
 ```
@@ -271,14 +271,14 @@ git stash
 </br>
 **Obs:.** Arquivos ignorados pelo Git, assim como não rastreados não são adicionados ao stash.
 </br>
-**Obs:.** Para que seja possível adicionar um arquivo não rastreado pelo Git ao stash, é necessário passar o parâmetro -u (ou --include-untracked) para esse propósito.
+**Obs:.** Para que seja possível adicionar um arquivo não rastreado pelo Git ao stash, é necessário passar o parâmetro -u (ou --include-untracked), para esse propósito.
 
 - O comando seguinte faz a listagem dos índices de stash salvos atualmente:
 ```
 git stash list
 ```
 
-- Para remover todos os índices de stash salvos para serem aplicados posteriormente, basta executar o comando a seguir:
+- Para remover todos os índices de stash salvos temporariamente, basta executar o comando a seguir:
 ```
 git stash clear
 ```
@@ -300,7 +300,8 @@ git stash apply
 ```
 git stash pop
 ```
-- Para ter uma lista de arquivos alterados que foram salvos temporariamente pelo comando stash, basta usar o comando a seguir:
+
+- Para ter uma lista de arquivos alterados e, que foram salvos temporariamente pelo comando stash, basta usar o comando a seguir:
 ```
 git stash show
 ```
