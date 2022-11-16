@@ -348,14 +348,20 @@ git help remote
 git pull <origin> <master>
 ```
 **Obs:.** O comando acima está apontando para o repositório remoto origin e branch master. Alterar os parametros *origin* e *master* para o repositório remoto e branch, respectivamente, de sua escolha.
-
 [Documentação do comando pull](https://git-scm.com/docs/git-pull)
 
-- Para enviar a branch do repositório local para a servidor remoto, utilize o seguinte comando:
+- Para atualizar a branch local de uma feature com os commits que podem ter sido enviados para a branch remota que deu origem a esta branch local, basta usar o seguinte comando:
+```
+git fetch
+git rebase origin/master
+```
+**Obs:.** Este comando supoe que o servidor remoto se chama *origin* e, a branch que deu origem a esta branch local é a *master*.
+
+- Para enviar a branch do repositório local para o servidor remoto, utilize o seguinte comando:
 ```
 git push -u <origin> <master>
 ```
-**Obs:.** Utilize o parâmetro *-u* equivamente à *--set-upstream* somente quando a branch ainda não existir no repositório remoto.
+**Obs:.** Utilize o parâmetro *-u* equivalente à *--set-upstream* somente quando a branch ainda não existir no repositório remoto.
 
 - Para mandar todas as alterações (commits) do repositório local para o repositório remoto, utilize o seguinte comando:
 ```
